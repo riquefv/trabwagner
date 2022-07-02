@@ -24,7 +24,7 @@ funcao <- function(L, beta0, beta, dias){
 # Definindo a funcao perda como RMSE - Root Mean Squared Error
 perda <- function (param, y, dias){
   mu <- funcao(L = param[1], beta0 = param[2], beta=param[3], dias = dias)
-  out <- sqrt(sum((y-mu)^2))
+  out <- sum((y-mu)^2)
   return(out)
 }
 
