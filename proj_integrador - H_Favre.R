@@ -50,7 +50,7 @@ for (i in 1:length(metodos)){
                     dias = dados1$DIAS, method = metodos[i])$value
 }
 
-# Usar o método que levou ao mínimo rmse
+# Usar o mÃ©todo que levou ao mÃ­nimo rmse
 melhor_metodo_canal1 <- metodos[which(rmse == min(rmse))]
 
 
@@ -85,7 +85,7 @@ for (i in 1:length(metodos)){
                       dias = dados2$DIAS, method = metodos[i])$value
 }
 
-# Usar o método que levou ao mínimo rmse
+# Usar o mÃ©todo que levou ao mÃ­nimo rmse
 melhor_metodo_canal2 <- metodos[which(rmsec2 == min(rmsec2))]
 
 
@@ -109,7 +109,7 @@ valores_preditos_canal2 <- funcao(L = otimc2$par[1], beta0 = otimc2$par[2],
 predicao365_canal1 <- valores_preditos_canal1[dataalvocanal1]
 predicao365_canal2 <- valores_preditos_canal2[dataalvocanal2]
 
-#Gráficos finais, com dados reais e ajustes
+#GrÃ¡ficos finais, com dados reais e ajustes
 par(mfrow = c(1,2), mar=c(2.6, 3, 1.2, 0.5), mgp = c(1.6, 0.6, 0))
 plot(dados1$Y ~ dados1$DIAS, xlim = c(0, dataalvocanal1), ylim = c(0, 50),
      ylab = "Numero de inscritos*100000", main = "Canal 1",
@@ -119,7 +119,7 @@ lines (valores_preditos_canal1 ~ seq(0,dataalvocanal1), col = 'deepskyblue1')
 text(dataalvocanal1-350, otimc1$par[1]-5,
      labels = paste0("Preditos ",round(predicao365_canal1,5)*100000,
                      '\n'," inscritos"),
-     cex = .8, pos = 4, col = "black")
+     cex = .8, pos = 4, col = "purple")
 plot(dados2$Y ~ dados2$DIAS, xlim = c(0, dataalvocanal2), ylim = c(0, 50),
      ylab = "Numero de inscritos*100000", main = "Canal 2",
      xlab = "Dias", type = "o", cex = 0.1)
@@ -128,5 +128,5 @@ lines (valores_preditos_canal2 ~ seq(0,dataalvocanal2), col = 'deepskyblue1')
 text(dataalvocanal2-300, otimc2$par[1]-4,
   labels = paste0("Preditos ",round(predicao365_canal2,5)*100000,
                   '\n'," inscritos"),
-     cex = .8, pos = 4, col = "black")
+     cex = .8, pos = 4, col = "purple")
 
