@@ -11,10 +11,6 @@ dados1$Y <- cumsum(dados1$INSCRITOS)
 dados2$INSCRITOS <- dados2$INSCRITOS/100000
 dados2$Y <- cumsum(dados2$INSCRITOS)
 
-# Salvando os dados em disco local
-# write.csv(dados1, "dados1.csv")
-# write.csv(dados1, "dados2.csv")
-
 # Alvos de predicao
 dataalvocanal1 <- max(dados1$DIAS)+365
 dataalvocanal2 <- max(dados2$DIAS)+365
